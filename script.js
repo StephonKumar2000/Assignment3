@@ -95,7 +95,11 @@ function fill(){
 
 function clearAll(){
     alert("Clicked Clear All")
-    
+
+    var cells = document.getElementsByTagName('td')
+    for(var i=0; i < cells.length; i++){
+      cells[i].style.background = ''
+    }
 }
 
 function fillU(){
