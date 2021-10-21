@@ -60,6 +60,16 @@ function removeR() {
 //Remove a column
 function removeC() {
     alert("Clicked Remove Col")
+
+    if(numCols == 0) {
+        return alert("There are NO comlumns to remove!!!")
+    }
+
+//You can remove columns and delete cells
+    for(var i=0; i < numRows; i++) {
+        grid.rows[i].deleteCell(numCols-1)
+    }
+    numCols--
 }
 //sets global var for selected color
 function selected(){
@@ -69,10 +79,23 @@ function selected(){
 
 function fill(){
     alert("Clicked Fill All")
+
+//Color being selected
+
+    if (colorSelected == null){
+      return alert("You have NOT selected a color!!!")
+    }
+
+//Fill all the uncolored cells
+    var cells = document.getElementsByTagName('td')
+    for(var = i=0; i < cells.length; i++){
+      cells[i].style.background = colorSelected
+    }
 }
 
 function clearAll(){
     alert("Clicked Clear All")
+    
 }
 
 function fillU(){
