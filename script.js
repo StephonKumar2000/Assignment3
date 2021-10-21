@@ -25,6 +25,23 @@ function addR() {
 //Add a column
 function addC() {
     alert("Clicked Add Col")
+
+//Does the rows == 0
+
+    if(numRows == 0){
+      return addR()
+    }
+    for(var i = numCols++; i < numCols; i++){
+      for (var j=0; j < numRows; j++) {
+            // Add Cell
+            var newCell = grid.rows[j].insertCell(i);
+            var newText = document.createTextNode('CELL');
+            newCell.appendChild(newText);
+            newCell.onclick = function() {
+                return changeColor(this.parentElement.rowIndex, this.cellIndex+1)
+            }
+        }
+    }
 }
 
 //Remove a row
