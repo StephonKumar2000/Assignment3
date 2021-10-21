@@ -104,4 +104,14 @@ function clearAll(){
 
 function fillU(){
     alert("Clicked Fill All Uncolored")
+
+    if (colorSelected == null) {
+        return alert("No color selected!")
+    }
+    
+//Fill all the uncolored cells
+    var cells = document.getElementsByTagName('td')
+    for(var i=0; i < cells.length; i++) {
+        if (cells[i].style.background == '')
+            cells[i].style.background = colorSelec
 }
