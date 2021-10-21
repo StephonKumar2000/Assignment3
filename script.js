@@ -2,6 +2,21 @@ let numRows = 0;
 let numCols = 0;
 let colorSelected;
 
+function changeColor(rowIndex, cellIndex) {
+    target = rowIndex*numCols + cellIndex
+
+    if (colorSelected == null) {
+        return alert("No color selected!")
+    }
+
+    var cells = document.getElementsByTagName('td')
+    for(var i=0; i <= cells.length; i++) {
+        if (target-1 == i)
+            cells[i].style.background = colorSelected
+    }
+
+}
+
 //Add a row
 function addR() {
     alert("Clicked Add Row")
@@ -108,7 +123,7 @@ function fillU(){
     if (colorSelected == null) {
         return alert("No color selected!")
     }
-    
+
 //Fill all the uncolored cells
     var cells = document.getElementsByTagName('td')
     for(var i=0; i < cells.length; i++) {
